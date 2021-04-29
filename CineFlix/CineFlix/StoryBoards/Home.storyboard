@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FrV-lj-oUt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="0mc-FP-Epq">
+            <objects>
+                <viewController id="i7x-n7-ehb" customClass="HomeViewController" customModule="CineFlix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LJ2-BN-bpb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hx0-gL-FeD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="205"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFi-kW-q2Z">
+                                <rect key="frame" x="0.0" y="298" width="414" height="515"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bks-VT-oWu"/>
+                        <color key="backgroundColor" red="0.18823529410000001" green="0.2784313725" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LFi-kW-q2Z" firstAttribute="leading" secondItem="Bks-VT-oWu" secondAttribute="leading" id="4rC-ZP-8fq"/>
+                            <constraint firstItem="Hx0-gL-FeD" firstAttribute="trailing" secondItem="Bks-VT-oWu" secondAttribute="trailing" id="8eG-vL-646"/>
+                            <constraint firstItem="Bks-VT-oWu" firstAttribute="bottom" secondItem="Hx0-gL-FeD" secondAttribute="bottom" constant="520" id="FuQ-F8-1g2"/>
+                            <constraint firstItem="LFi-kW-q2Z" firstAttribute="bottom" secondItem="Bks-VT-oWu" secondAttribute="bottom" id="KnI-1j-VH0"/>
+                            <constraint firstItem="LFi-kW-q2Z" firstAttribute="trailing" secondItem="Bks-VT-oWu" secondAttribute="trailing" id="X3a-T5-zOR"/>
+                            <constraint firstItem="Hx0-gL-FeD" firstAttribute="top" secondItem="Bks-VT-oWu" secondAttribute="top" id="iTF-PW-dag"/>
+                            <constraint firstItem="Hx0-gL-FeD" firstAttribute="leading" secondItem="Bks-VT-oWu" secondAttribute="leading" id="l0h-E4-Sys"/>
+                            <constraint firstItem="LFi-kW-q2Z" firstAttribute="top" secondItem="Hx0-gL-FeD" secondAttribute="bottom" constant="5" id="zaa-RI-SkT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dut-tE-IIg"/>
+                    <connections>
+                        <outlet property="tableViewCorpo" destination="LFi-kW-q2Z" id="nsh-xl-j90"/>
+                        <outlet property="tableViewDestaque" destination="Hx0-gL-FeD" id="HLz-cQ-Fik"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jbw-Fl-W4x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="56.919642857142854"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="OPe-5n-sil">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="FrV-lj-oUt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="B8p-z2-Zvk"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tX9-6o-Km6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i7x-n7-ehb" kind="relationship" relationship="rootViewController" id="jmy-on-dxY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ati-l3-Zoc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.652173913043484" y="56.919642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
