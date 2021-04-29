@@ -9,9 +9,6 @@ import UIKit
 
 class TopRatedContainerTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    
-
-
     @IBOutlet weak var collectionViewDestaque: UICollectionView!
     
     var homeviewmodel: HomeViewModel = HomeViewModel()
@@ -32,16 +29,18 @@ class TopRatedContainerTableViewCell: UITableViewCell, UICollectionViewDelegate,
     func setup(value: MovieList?) {
         
         self.collectionViewDestaque.register(UINib(nibName: "TopRatedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TopRatedCollectionViewCell")
+        
+        self.movieresult = value
         self.collectionViewDestaque.delegate = self
         self.collectionViewDestaque.dataSource = self
-        self.movieresult = value
+        
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         let count = self.movieresult?.results.count ?? 0
-        return count + 1
+        return count + 2
         
     }
     

@@ -16,13 +16,23 @@ class HomeViewController: UIViewController {
     
     private func configTableViews() {
         self.tableViewDestaque.register(UINib(nibName: "TopRatedContainerTableViewCell", bundle: nil), forCellReuseIdentifier: "TopRatedContainerTableViewCell")
-        self.tableViewDestaque.delegate = self
-        self.tableViewDestaque.dataSource = self
+        
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configTableViews()
+        
+        
+        self.homeviewmodel.loadMovieList { (result, error) in
+            
+            if (result) {
+                DispatchQueue.main.async {
+                    self.tableViewDestaque.delegate = self
+                    self.tableViewDestaque.dataSource = self
+                }
+            }
+        }
         
         }
     }
@@ -39,7 +49,9 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TopRatedContainerTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "TopRatedContainerTableViewCell", for: indexPath) as? TopRatedContainerTableViewCell
+        
         cell?.setup(value: self.homeviewmodel.loadMovies)
+        
         return cell ?? UITableViewCell()
     }
 }

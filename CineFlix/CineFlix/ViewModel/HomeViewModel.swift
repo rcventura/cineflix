@@ -24,12 +24,25 @@ class HomeViewModel: GenericWorker {
                 print("000000000000000000000\(movies)")
             } catch {
                     completion(nil,nil)
-                print("ssssssssssssssssssssssss")
+            
                 }
             }
             task.resume()
         }
     }
+    
+    
+    func loadMovieList(completionHandler: @escaping (_ result: Bool, _ error: String?) -> Void) {
+        self.getMoviePlaying { (success, error) in
+            if let _success = success {
+                self.moviesl = _success
+                completionHandler(true,nil)
+            } else {
+                completionHandler(false, "")
+            }
+        }
+    }
+    
     
     var getCount: Int {
             return 1
